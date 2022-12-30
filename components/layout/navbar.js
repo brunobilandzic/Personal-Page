@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
@@ -10,7 +11,7 @@ export default function Navbar() {
   return (
     <nav className={`flex py-5 px-5`}>
       <Link href="/">
-        <img
+        <Image
           className={`rounded-full`}
           src="/images/profile.jpg"
           width={45}
