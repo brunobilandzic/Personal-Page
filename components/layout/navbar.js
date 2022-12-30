@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
-
+import profile from "../../public/images/profile.JPG"
 export default function Navbar() {
   const router = useRouter();
 
@@ -13,7 +13,7 @@ export default function Navbar() {
       <Link href="/">
         <Image
           className={`rounded-full`}
-          src="/static/images/profile.jpg"
+          src={profile}
           width={45}
           height={45}
           alt="BB"
