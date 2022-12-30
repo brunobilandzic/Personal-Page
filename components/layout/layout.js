@@ -5,7 +5,7 @@ export default function Layout({ children, home, title }) {
   return (
     <>
     <Head>
-      <link rel="icon" src="/images/profile.jpg"></link>
+    <link rel="icon" href="/images/favicon.ico" />
     </Head>
       <Navbar />
       <div className={`px-10`}>{children}</div>
