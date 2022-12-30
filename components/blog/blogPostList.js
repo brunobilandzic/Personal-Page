@@ -7,6 +7,7 @@ export default function BlogPostList({ blogPosts }) {
       {blogPosts.map((post, i) => (
         <BlogPostListItem {...post} key={i} />
       ))}
+      
     </div>
   );
 }
