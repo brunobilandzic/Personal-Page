@@ -7,7 +7,7 @@ export default function BlogPostListItem({ sys, fields }) {
       className={`text-inherit hover:no-underline`}
       href={ `/blog/${fields.slug}`}
     >
-      <article className={`px-2  border-2 border-500 rounded-lg`}>
+      <article className={`px-2 mb-3  border-2 border-500 rounded-lg`}>
         <div className="text-sm text-gray-400">
           <Time value={sys.createdAt} format="YYYY/MM/DD hh:mm"></Time>{" "}
         </div>
