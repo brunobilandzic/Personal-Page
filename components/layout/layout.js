@@ -8,7 +8,7 @@ export default function Layout({ children, home, title }) {
     <link rel="icon" href="/images/favicon.ico" />
     </Head>
       <Navbar />
-      <div className={`px-10`}>{children}</div>
+      <div className={`px-2 sm:px-10 `}>{children}</div>
     </>
   );
 }

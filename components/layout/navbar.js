@@ -7,7 +7,7 @@ export default function Navbar() {
   const router = useRouter();
 
   const currentPage = router.pathname;
-  console.log(currentPage);
+
   return (
     <nav className={`flex py-5 px-5`}>
       <Link href="/">
