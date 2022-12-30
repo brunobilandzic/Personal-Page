@@ -13,7 +13,7 @@ export default function Navbar() {
       <Link href="/">
         <Image
           className={`rounded-full`}
-          src="/images/profile.jpg"
+          src="/static/images/profile.jpg"
           width={45}
           height={45}
           alt="BB"
