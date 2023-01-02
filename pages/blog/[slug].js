@@ -3,6 +3,7 @@ import Head from "next/head";
 import React from "react";
 
 import Time from "react-time-format";
+import { getAllParams, getAllPostSlugs, getPostBySlug } from "../../lib/posts";
 
 export default function Post({ post }) {
   const { sys, fields } = post;
@@ -25,31 +26,17 @@ export default function Post({ post }) {
   );
 }
 
-const client = createClient({
-  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-  space: process.env.CONTENTFUL_SPACE_ID,
-});
-
 export async function getStaticPaths() {
-  const response = await client.getEntries({ content_type: "post" });
-  const paths = response.items.map((item) => ({
-    params: { slug: item.fields.slug },
-  }));
   return {
-    paths,
+    paths: await getAllPostSlugs(),
     fallback: false,
   };
 }
 
 export async function getStaticProps({ params }) {
-  const response = await client.getEntries({
-    content_type: "post",
-    "fields.slug": params.slug,
-  });
-
   return {
     props: {
-      post: response.items[0],
+      post: await getPostBySlug(params.slug),
     },
   };
 }
