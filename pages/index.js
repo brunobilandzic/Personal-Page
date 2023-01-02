@@ -6,12 +6,12 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Bruno Bilandzic personal page</title>
+        <title>Bruno Bilandzic</title>
       </Head>
-      <section className={utilStyles.headingMd}>
-        <p>Hello, I am Bruno.</p>
-        <p className="text-lg">
-          This is my personal page. I am glad you are wanting to learn more
+      <section>
+        <h1 className="text-3xl mb-4">Hello, I am Bruno.</h1>
+        <p className="">
+          This is my personal page.<br/> I am glad you are wanting to learn more
           about me.
         </p>
       </section>

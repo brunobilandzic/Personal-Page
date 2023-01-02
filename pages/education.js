@@ -1,6 +1,6 @@
-import { createClient } from "contentful";
 import Head from "next/head";
 import React from "react";
+import { getEducation } from "../lib/education";
 
 export default function Education({ education }) {
   const { title, content } = education;
@@ -19,16 +19,9 @@ export default function Education({ education }) {
 }
 
 export async function getStaticProps() {
-  const client = createClient({
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-    space: process.env.CONTENTFUL_SPACE_ID,
-  });
-
-  const response = await client.getEntries({ content_type: "education" });
-
   return {
     props: {
-      education: response.items[0].fields,
+      education: await getEducation()
     },
   };
 }

@@ -1,9 +1,7 @@
-import { createClient } from "contentful";
 import Head from "next/head";
 import React from "react";
-
 import Time from "react-time-format";
-import { getAllParams, getAllPostSlugs, getPostBySlug } from "../../lib/posts";
+import { getAllPostSlugs, getPostBySlug } from "../../lib/posts";
 
 export default function Post({ post }) {
   const { sys, fields } = post;
