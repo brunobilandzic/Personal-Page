@@ -10,8 +10,8 @@ export default function Education({ education }) {
         <title>{title}</title>
       </Head>
 
-      <article className={`px-2  border-2 border-500 rounded-lg`}>
-        <div className="text-xl">{title}</div>
+      <article className={``}>
+        <div className="">{title}</div>
         <div>{content}</div>
       </article>
     </>

@@ -11,12 +11,12 @@ export default function Post({ post }) {
         <title>{fields.title}</title>
       </Head>
       <div>
-        <article className={`px-2  border-2 border-500 rounded-lg`}>
-          <div className="text-sm text-gray-400">
+        <article className={``}>
+          <div className="">
             <Time value={sys.createdAt} format="YYYY/MM/DD hh:mm"></Time>{" "}
           </div>
-          <div className="text-green-300">{fields.category}</div>
-          <div className="text-xl">{fields.title}</div>
+          <div className="">{fields.category}</div>
+          <div className="">{fields.title}</div>
           <div>{fields.content}</div>
         </article>
       </div>

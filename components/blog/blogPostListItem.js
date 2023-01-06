@@ -4,15 +4,15 @@ import Time from "react-time-format";
 export default function BlogPostListItem({ sys, fields }) {
   return (
     <Link
-      className={`text-inherit hover:no-underline`}
+      className={``}
       href={ `/blog/${fields.slug}`}
     >
-      <article className={`px-2 mb-3  border-2 border-500 rounded-lg`}>
-        <div className="text-sm text-gray-400">
+      <article className={``}>
+        <div className="">
           <Time value={sys.createdAt} format="YYYY/MM/DD hh:mm"></Time>{" "}
         </div>
-        <div className="text-green-300">{fields.category}</div>
-        <div className="text-xl">{fields.title}</div>
+        <div className="">{fields.category}</div>
+        <div className="">{fields.title}</div>
       </article>
     </Link>
   );
