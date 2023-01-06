@@ -1,0 +1,15 @@
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:visited {
+  color: inherit;
+}
+
+:root {
+  --blue: #1e90ff;
+  --white: #ffffff;
+  --darkGreen: #073B01;
+  --lightGreen: #0F5F02;
+}

@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Navbar from "./navbar";
+import NavbarComponent from "./navbar";
 
 export default function Layout({ children, home, title }) {
   return (
@@ -11,7 +11,7 @@ export default function Layout({ children, home, title }) {
           content="Bruno Bilandzic personal page"
         />
     </Head>
-      <Navbar />
+      <NavbarComponent />
       <div className={``}>{children}</div>
     </>
   );

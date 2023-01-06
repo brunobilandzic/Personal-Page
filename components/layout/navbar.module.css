@@ -1,0 +1,37 @@
+.navbarImage {
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  margin-right: 1rem;
+}
+
+.navbar {
+  color: var(--lightGreen);
+  font-weight: bolder;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.active {
+    color: var(--darkGreen);
+}
+
+@media (min-width: 992px) {
+  .navbarLink {
+    padding: 0 0.5rem;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+  }
+}
+@media (max-width: 992px) {
+  .navbarLink {
+    padding: 0.5rem 0rem;
+  }
+}
