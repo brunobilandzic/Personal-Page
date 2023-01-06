@@ -12,7 +12,7 @@ export default function Layout({ children, home, title }) {
         />
     </Head>
       <NavbarComponent />
-      <div className={``}>{children}</div>
+      <div className={`container`}>{children}</div>
     </>
   );
 }

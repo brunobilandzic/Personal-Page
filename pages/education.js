@@ -1,6 +1,7 @@
 import Head from "next/head";
 import React from "react";
 import { getEducation } from "../lib/contentful";
+import styles from "../components/blog/blogPost.module.css";
 
 export default function Education({ education }) {
   const { title, content } = education;
@@ -10,10 +11,10 @@ export default function Education({ education }) {
         <title>{title}</title>
       </Head>
 
-      <article className={``}>
-        <div className="">{title}</div>
+      <div className={`${styles.big}`}>
+        <div className={`${styles.title}`}>{title}</div>
         <div>{content}</div>
-      </article>
+      </div>
     </>
   );
 }

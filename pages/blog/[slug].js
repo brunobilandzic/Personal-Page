@@ -1,6 +1,6 @@
 import Head from "next/head";
 import React from "react";
-import Time from "react-time-format";
+import BlogPost from "../../components/blog/blogPost";
 import { getAllBLogPostsSlugs, getBlogPostBySlug } from "../../lib/contentful";
 
 export default function Post({ post }) {
@@ -10,16 +10,7 @@ export default function Post({ post }) {
       <Head>
         <title>{fields.title}</title>
       </Head>
-      <div>
-        <article className={``}>
-          <div className="">
-            <Time value={sys.createdAt} format="YYYY/MM/DD hh:mm"></Time>{" "}
-          </div>
-          <div className="">{fields.category}</div>
-          <div className="">{fields.title}</div>
-          <div>{fields.content}</div>
-        </article>
-      </div>
+      <BlogPost sys={sys} fields={fields} />
     </>
   );
 }
