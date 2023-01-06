@@ -12,7 +12,8 @@ export default function Home() {
         <h1 className="text-3xl mb-4">Hello, I am Bruno.</h1>
         <p className="">
           This is my personal page.<br/> I am glad you are wanting to learn more
-          about me.
+          about me. 
+          This is change made on test branch.
         </p>
       </section>
       <section></section>
