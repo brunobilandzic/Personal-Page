@@ -1,6 +1,6 @@
 import Head from "next/head";
 import React from "react";
-import { getEducation } from "../lib/education";
+import { getEducation } from "../lib/contentful";
 
 export default function Education({ education }) {
   const { title, content } = education;

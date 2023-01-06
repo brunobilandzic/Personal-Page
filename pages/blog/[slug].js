@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React from "react";
 import Time from "react-time-format";
-import { getAllPostSlugs, getPostBySlug } from "../../lib/posts";
+import { getAllBLogPostsSlugs, getBlogPostBySlug } from "../../lib/contentful";
 
 export default function Post({ post }) {
   const { sys, fields } = post;
@@ -26,7 +26,7 @@ export default function Post({ post }) {
 
 export async function getStaticPaths() {
   return {
-    paths: await getAllPostSlugs(),
+    paths: await getAllBLogPostsSlugs(),
     fallback: false,
   };
 }
@@ -34,7 +34,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   return {
     props: {
-      post: await getPostBySlug(params.slug),
+      post: await getBlogPostBySlug(params.slug),
     },
   };
 }
