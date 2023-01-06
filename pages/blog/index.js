@@ -1,15 +1,20 @@
 import Head from "next/head";
 import React from "react";
 import BlogPostList from "../../components/blog/blogPostList";
+import BlogPostListItem from "../../components/blog/blogPostListItem";
 import { getAllBlogPosts } from "../../lib/contentful";
 
-export default function Blog({ posts }) {
+export default function Blog({ blogPosts }) {
   return (
     <>
       <Head>
         <title>Blog</title>
       </Head>
-      <BlogPostList blogPosts={posts} />
+      <div>
+        {blogPosts.map((post, i) => (
+          <BlogPostListItem {...post} key={i} />
+        ))}
+      </div>
     </>
   );
 }
