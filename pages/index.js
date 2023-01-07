@@ -11,7 +11,6 @@ export default function Home() {
         <p className="">
           This is my personal page.<br/> I am glad you are wanting to learn more
           about me. 
-          This is change made on test branch.
         </p>
       </section>
     </>
