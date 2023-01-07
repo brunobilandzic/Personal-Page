@@ -7,4 +7,8 @@ export const navbar = [
     name: "Education",
     href: "/education",
   },
+  {
+    name: "Messages",
+    href: "/messages",
+  }
 ];

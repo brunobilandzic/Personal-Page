@@ -16,15 +16,17 @@ export default function Index({ messages }) {
 export async function getServerSideProps() {
   await dbConnect();
   const response = await Message.find({});
-  const messages = response.map((message) => {
-    return {
-      title: message.title,
-      content: message.content,
-      username: message.username,
-      slug: message.slug,
-      date: message.date,
-    };
-  });
+  const messages = response
+    .sort((a, b) => b.date - a.date)
+    .map((message) => {
+      return {
+        title: message.title,
+        content: message.content,
+        username: message.username,
+        slug: message.slug,
+        date: message.date.toString(),
+      };
+    });
   return {
     props: {
       messages,
