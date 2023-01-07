@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const messageObjet = {
-  title: { type: String, required: true },
+  title: { type: String, required: true, maxlength: 30 },
   content: { type: String, required: true },
   username: { type: String, default: "Anonymous" },
   slug: { type: String, required: true, unique: true, maxlength: 100 },
