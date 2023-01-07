@@ -1,12 +1,9 @@
-import Link from "next/link";
 import React from "react";
 import { Card } from "react-bootstrap";
-import Time from "react-time-format";
-import utils from "./blogPost.module.css";
 
-export default function BlogPostListItem({ sys, fields }) {
+export default function MessageItem({ title, content, username, slug }) {
   return (
-    <Link className={``} href={`/blog/${fields.slug}`}>
+    <Link className={``} href={`/messages/${slug}`}>
       <Card className={`${utils.card} my-2`}>
         <div className="small">
           <Time value={sys.createdAt} format="YYYY/MM/DD hh:mm"></Time>{" "}
