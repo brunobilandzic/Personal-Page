@@ -10,8 +10,7 @@ export default function Home() {
         <h1 className="">Hello, I am Bruno.</h1>
         <p className="">
           This is my personal page.<br/> I am glad you are wanting to learn more
-          about me. 
-          This is change made on test branch.
+          about me.
         </p>
       </section>
     </>
