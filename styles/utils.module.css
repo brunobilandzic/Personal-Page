@@ -8,6 +8,51 @@
   border-color: var(--lightGreen);
 }
 
-.big {
+.bigBlogPost {
   padding: 1.2rem 0;
+}
+
+.formGroup {
+  margin-bottom: 1rem;
+}
+
+.formLabel {
+  font-size: 1.2rem;
+  color: var(--darkGreen);
+  font-weight: 600;
+}
+
+.headingL {
+  font-size: 1.5rem;
+  color: var(--darkGreen);
+  font-weight: 600;
+}
+
+.formError {
+    padding: 0.5rem;
+    margin-top:.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.alertIcon {
+  opacity: 0.6;
+}
+
+.actionBtn {
+  background-color: var(--actionGreen);
+  border-color: var(--actionGreen);
+  padding: 0.5rem 1rem;
+}
+
+.actionBtn:hover {
+  background-color: var(--lightGreen);
+  border-color: var(--actionGreen);
+}
+
+.actionBtn:disabled {
+  background-color: var(--actionGreen);
+  border-color: var(--actionGreen);
+  opacity: 0.3;
 }

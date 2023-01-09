@@ -2,10 +2,19 @@ import React, { useEffect } from "react";
 import Message from "../../models/message";
 import dbConnect from "../../lib/mongooseConnect";
 import MessageItem from "../../components/message/messageItem";
+import utils from "../../styles/utils.module.css";
+import styles from "../../components/message/messages.module.css";
+import { Button } from "react-bootstrap";
+import Link from "next/link";
 
 export default function Index({ messages }) {
   return (
     <div>
+      <div className={styles.topWrap}>
+        <Link href="messages/new">
+          <Button className={utils.actionBtn}>New</Button>
+        </Link>
+      </div>
       {messages?.map((message, i) => (
         <MessageItem key={i} message={message} />
       ))}
