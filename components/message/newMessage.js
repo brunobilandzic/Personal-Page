@@ -6,9 +6,11 @@ import {
   VALIDATOR_MAX_LENGTH,
   VALIDATOR_REQUIRED,
 } from "../../lib/validators";
+import styles from "./messages.module.css";
 import utils from "../../styles/utils.module.css";
 import FormError from "../layout/formError";
 import Modal from "../layout/modal";
+import Link from "next/link";
 
 const initialMessage = {
   title: {
@@ -122,7 +124,10 @@ export default function NewMessage() {
         content={
           <>
             <p>Message "{newMessageTitle}" sent successfully!</p>
-            <p>You can visit it at <a href={`/messages/${newMessageSlug}`}>this link</a></p>
+            <p>
+              You can visit it at{" "}
+              <a href={`/messages/${newMessageSlug}`}>this link</a>
+            </p>
           </>
         }
         showModal={showModal}
@@ -130,7 +135,31 @@ export default function NewMessage() {
         onCancel={() => {
           setShowModal(false);
         }}
+        footer={
+          <>
+            <Link href="/messages">
+              <Button className={styles.backModal}>All messages</Button>
+            </Link>
+          </>
+        }
       />
+      <div>
+        <h1 className={utils.headingL}>New message</h1>
+        <p>
+          You can say anything to me, totally anonymously, or not, you choose.{" "}
+          <br />
+          It will persist until the end of time.
+          <br />
+          Use the language of your choice.
+          <br />
+          I politely ask you to not use other people's names.
+        </p>
+      </div>
+      <div className={styles.middleWrap}>
+        <Link href="/messages">
+          <Button className={utils.actionBtn}>All messages</Button>
+        </Link>
+      </div>
       <Form className="mb-5 pb-5" onSubmit={onSubmit}>
         <Form.Group className={utils.formGroup} controlId="title">
           <Form.Label className={utils.formLabel}>Title</Form.Label>
@@ -172,7 +201,7 @@ export default function NewMessage() {
           <textarea
             autoCapitalize="off"
             className="form-control"
-            placeholder="Enter the contents of the message"
+            placeholder="Enter the content of the message"
             rows="10"
             onClick={onInputClick}
             onChange={onInputChange}
