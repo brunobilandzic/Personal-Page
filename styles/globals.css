@@ -7,9 +7,18 @@ a:visited {
   color: inherit;
 }
 
+a:hover {
+  color: inherit;
+}
+
 :root {
   --blue: #1e90ff;
   --white: #ffffff;
-  --darkGreen: #073B01;
-  --lightGreen: #0F5F02;
+  --darkGreen: #0D5902;
+  --lightGreen: #179903;
+  --actionGreen: #265202;
+  --ultraDarkGreen: #041C01;
+  --ultraLightGreen: #D9F6D5;
+  --darkRed: #8B0000;
+  --ultraDarkRed: #3C0000;
 }

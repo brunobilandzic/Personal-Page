@@ -1,0 +1,66 @@
+.title {
+  font-size: 2rem;
+  color: var(--darkGreen);
+}
+
+.card {
+  padding: 1rem 0.5rem 0.5rem;
+  border-color: var(--lightGreen);
+}
+
+.bigBlogPost {
+  padding: 1.2rem 0;
+}
+
+.formGroup {
+  margin-bottom: 1rem;
+}
+
+.formLabel {
+  font-size: 1.2rem;
+  color: var(--darkGreen);
+  font-weight: 600;
+}
+
+.headingL {
+  font-size: 1.8rem;
+  color: var(--darkGreen);
+  font-weight: 600;
+}
+
+.formError {
+    padding: 0.5rem;
+    margin-top:.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.alertIcon {
+  opacity: 0.6;
+}
+
+.actionBtn {
+  background-color: var(--actionGreen)!important;
+  border-color: var(--actionGreen)!important;
+}
+
+.actionBtn:hover {
+  background-color: var(--lightGreen)!important;
+  border-color: var(--actionGreen)!important;
+}
+
+.actionBtn:disabled {
+  background-color: var(--actionGreen)!important;
+  border-color: var(--actionGreen)!important;
+  opacity: 0.3!important;
+}
+
+.customLink {
+  color: var(--darkGreen);
+  font-weight: 600;
+}
+
+.customLink:hover {
+  color: var(--lightGreen);
+}

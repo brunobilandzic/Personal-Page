@@ -10,6 +10,10 @@
   font-weight: bolder;
 }
 
+.navbarLink:hover {
+  color: var(--darkGreen);
+}
+
 .brand {
   display: flex;
   align-items: center;
@@ -21,7 +25,11 @@
 
 @media (min-width: 992px) {
   .navbarLink {
-    padding: 0 0.5rem;
+    padding: 0.7rem 1rem;
+  }
+
+  .active {
+    border-bottom: 2px solid var(--darkGreen);
   }
 
   .nav {
