@@ -9,17 +9,27 @@
   box-shadow: 1px 1px 1px black;
   padding: 16px;
   border-radius: 1rem;
+  background-color: var(--ultraLightGreen);
 }
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.content {
+  margin-bottom: 1.5rem;
 }
 
 .close {
-    font-size: 1.5rem;
-    font-weight: bold;
-    cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--darkRed);
+}
+
+.close:hover {
+  color: var(--ultraDarkRed);
 }

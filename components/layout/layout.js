@@ -19,9 +19,10 @@ export default function Layout({ children }) {
         showModal={error.hasError}
         title={<div>Error</div>}
         content={<p>{error.message}</p>}
+        onCancel={() => dispatch(clearError())} 
         footer={
           <>
-            <Button onClick={() => dispatch(clearError())}>Cancel</Button>
+            <Button className="btn-danger" onClick={() => dispatch(clearError())}>Cancel</Button>
           </>
         }
       />

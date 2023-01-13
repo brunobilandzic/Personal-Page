@@ -129,7 +129,7 @@ export default function NewMessage() {
             <p>Message "{newMessageTitle}" sent successfully!</p>
             <p>
               You can visit it at{" "}
-              <a href={`/messages/${newMessageSlug}`}>this link</a>
+              <a className={utils.customLink} href={`/messages/${newMessageSlug}`}>this link</a>
             </p>
           </>
         }
