@@ -13,6 +13,7 @@ import Modal from "../layout/modal";
 import Link from "next/link";
 import { useDispatch } from "react-redux";
 import { setError } from "../../redux/slices/errorSlice";
+import { clearLoading, setLoading } from "../../redux/slices/loadingSlice";
 
 const initialMessage = {
   title: {
@@ -103,6 +104,7 @@ export default function NewMessage() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
+    setShowModal(true)    
     try {
       const response = await axios.post("/api/newmessage", {
         title: message.title.value,
@@ -112,8 +114,7 @@ export default function NewMessage() {
       if (response.status === 201) {
         setMessage(initialMessage);
         setNewMessageTitle(response.data.title);
-        setNewMessageSlug(response.data.slug);
-        setShowModal(true);
+        setNewMessageSlug(response.data.slug); 
       }
     } catch (error) {
       dispatch(setError({ message: error.response.data }));
@@ -152,6 +153,7 @@ export default function NewMessage() {
             </Button>
           </>
         }
+        onCancel={() => setShowModal(false)}
       />
       <div>
         <h1 className={utils.headingL}>New message</h1>
