@@ -8,6 +8,7 @@ import {
 } from "../../lib/validators";
 import utils from "../../styles/utils.module.css";
 import FormError from "../layout/formError";
+import Modal from "../layout/modal";
 
 const initialMessage = {
   title: {
@@ -31,11 +32,14 @@ const initialMessage = {
     isTouched: false,
     validationMessage: null,
   },
-}
+};
 
 export default function NewMessage() {
   const [message, setMessage] = useState(initialMessage);
   const [submitDisabled, setSubmitDisabled] = useState(true);
+  const [showModal, setShowModal] = useState(false);
+  const [newMessageTitle, setNewMessageTitle] = useState("");
+  const [newMessageSlug, setNewMessageSlug] = useState("");
 
   useEffect(() => {
     isSubmitDisabled();
@@ -77,7 +81,12 @@ export default function NewMessage() {
         username: message.username.value,
         content: message.content.value,
       });
-      setMessage(initialMessage);
+      if (response.status === 201) {
+        setMessage(initialMessage);
+        setNewMessageTitle(response.data.title);
+        setNewMessageSlug(response.data.slug);
+        setShowModal(true);
+      }
     } catch (error) {
       console.log(error);
     }
@@ -86,7 +95,7 @@ export default function NewMessage() {
   const isSubmitDisabled = () => {
     let isDisabled = false;
     Object.entries(message).forEach((entry) => {
-      const [key, value] = entry;
+      const [inputId, value] = entry;
       Object.entries(value).forEach((entry) => {
         const [key, value] = entry;
         if (key === "validationMessage" && value !== null) {
@@ -94,7 +103,7 @@ export default function NewMessage() {
           isDisabled = true;
           return;
         }
-        if (key === "isTouched" && !value) {
+        if (key === "isTouched" && !value && inputId != "username") {
           setSubmitDisabled(true);
           isDisabled = true;
           return;
@@ -108,6 +117,20 @@ export default function NewMessage() {
 
   return (
     <div>
+      <Modal
+        title={"Success"}
+        content={
+          <>
+            <p>Message "{newMessageTitle}" sent successfully!</p>
+            <p>You can visit it at <a href={`/messages/${newMessageSlug}`}>this link</a></p>
+          </>
+        }
+        showModal={showModal}
+        canCancel
+        onCancel={() => {
+          setShowModal(false);
+        }}
+      />
       <Form className="mb-5 pb-5" onSubmit={onSubmit}>
         <Form.Group className={utils.formGroup} controlId="title">
           <Form.Label className={utils.formLabel}>Title</Form.Label>
