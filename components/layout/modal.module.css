@@ -12,6 +12,13 @@
   background-color: var(--ultraLightGreen);
 }
 
+@media (max-width: 768px) {
+  .modal {
+    width: 80%;
+    left: 10%;
+  }
+}
+
 .header {
   display: flex;
   justify-content: space-between;
