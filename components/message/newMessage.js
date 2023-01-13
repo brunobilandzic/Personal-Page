@@ -156,7 +156,7 @@ export default function NewMessage() {
       <div>
         <h1 className={utils.headingL}>New message</h1>
         <p>
-          You can say anything to me, totally anonymously, or not, you choose.{" "}
+          You can say anything to me, totally anonymously, or not, you choose.
           <br />
           It will persist until the end of time.
           <br />
