@@ -161,7 +161,7 @@ export default function NewMessage() {
           It will persist until the end of time.
           <br />
           Use the language of your choice.
-          <br />I politely ask you to not use other people's names.
+          <br />I politely ask you to not use other people&apos;s names.
         </p>
       </div>
       <div className={styles.middleWrap}>
