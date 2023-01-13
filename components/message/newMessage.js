@@ -46,9 +46,32 @@ export default function NewMessage() {
   const [newMessageSlug, setNewMessageSlug] = useState("");
   const dispatch = useDispatch();
 
+  const isSubmitDisabled = () => {
+    let isDisabled = false;
+    Object.entries(message).forEach((entry) => {
+      const [inputId, value] = entry;
+      Object.entries(value).forEach((entry) => {
+        const [key, value] = entry;
+        if (key === "validationMessage" && value !== null) {
+          setSubmitDisabled(true);
+          isDisabled = true;
+          return;
+        }
+        if (key === "isTouched" && !value && inputId != "username") {
+          setSubmitDisabled(true);
+          isDisabled = true;
+          return;
+        }
+      });
+    });
+    if (!isDisabled) {
+      setSubmitDisabled(false);
+    }
+  };
+
   useEffect(() => {
     isSubmitDisabled();
-  }, [message]);
+  }, [submitDisabled, isSubmitDisabled, message]);
 
   const onInputClick = (e) => {
     setMessage({
@@ -97,28 +120,7 @@ export default function NewMessage() {
     }
   };
 
-  const isSubmitDisabled = () => {
-    let isDisabled = false;
-    Object.entries(message).forEach((entry) => {
-      const [inputId, value] = entry;
-      Object.entries(value).forEach((entry) => {
-        const [key, value] = entry;
-        if (key === "validationMessage" && value !== null) {
-          setSubmitDisabled(true);
-          isDisabled = true;
-          return;
-        }
-        if (key === "isTouched" && !value && inputId != "username") {
-          setSubmitDisabled(true);
-          isDisabled = true;
-          return;
-        }
-      });
-    });
-    if (!isDisabled) {
-      setSubmitDisabled(false);
-    }
-  };
+  
 
   return (
     <div>
