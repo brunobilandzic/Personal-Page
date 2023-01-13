@@ -126,9 +126,9 @@ export default function NewMessage() {
         title={"Success"}
         content={
           <>
-            <p>Message "{newMessageTitle}" sent successfully!</p>
+            <p>Message &quot;{newMessageTitle}&quot; sent successfully!</p>
             <p>
-              You can visit it at
+              You can visit it at&nbsp;
               <a
                 className={utils.customLink}
                 href={`/messages/${newMessageSlug}`}
@@ -153,7 +153,17 @@ export default function NewMessage() {
           </>
         }
       />
-
+      <div>
+        <h1 className={utils.headingL}>New message</h1>
+        <p>
+          You can say anything to me, totally anonymously, or not, you choose.
+          <br />
+          It will persist until the end of time.
+          <br />
+          Use the language of your choice.
+          <br />I politely ask you to not use other people's names.
+        </p>
+      </div>
       <div className={styles.middleWrap}>
         <Link href="/messages">
           <Button className={utils.actionBtn}>All messages</Button>
