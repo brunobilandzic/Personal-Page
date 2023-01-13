@@ -71,7 +71,7 @@ export default function NewMessage() {
 
   useEffect(() => {
     isSubmitDisabled();
-  }, [submitDisabled, isSubmitDisabled, message]);
+  }, [submitDisabled, message]);
 
   const onInputClick = (e) => {
     setMessage({
