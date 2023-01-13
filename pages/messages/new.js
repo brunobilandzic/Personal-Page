@@ -1,7 +1,14 @@
+import Head from "next/head";
 import React from "react";
 import NewMessage from "../../components/message/newMessage";
-import utils from "../../styles/utils.module.css";
 
 export default function New() {
-  return <NewMessage />;
+  return (
+    <>
+      <Head>
+        <title>New Message</title>
+      </Head>
+      <NewMessage />
+    </>
+  );
 }

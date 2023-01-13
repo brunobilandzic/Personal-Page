@@ -6,10 +6,14 @@ import utils from "../../styles/utils.module.css";
 import styles from "../../components/message/messages.module.css";
 import { Button } from "react-bootstrap";
 import Link from "next/link";
+import Head from "next/head";
 
 export default function Index({ messages }) {
   return (
     <div>
+      <Head>
+        <title>Messages</title>
+      </Head>
       <div className={styles.topWrap}>
         <Link href="messages/new">
           <Button className={utils.actionBtn}>New</Button>
