@@ -9,14 +9,14 @@ export default function Modal({
   onCancel,
   title,
   content,
-
-  footer
+  footer,
+  error
 }) {
   return (
     <>
       {showModal && <Backdrop onClick={onCancel} />}
       {showModal && (
-        <div className={styles.modal}>
+        <div className={`${styles.modal} ${error && styles.error}`}>
           <header className={styles.header}>
             <h2>{title}</h2>
             <div className={styles.close} onClick={onCancel}>

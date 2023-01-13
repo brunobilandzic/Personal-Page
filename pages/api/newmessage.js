@@ -8,6 +8,7 @@ export default async function handler(req, res) {
     return res.status(400).json({ message: "Missing data" });
   if (title.length > 30)
     return res.status(400).json({ message: "Title is too long" });
-  const newMessage = await newMeassge(req.body);
-  return res.status(201).json(newMessage);
+  const { succes, message, response } = await newMeassge(req.body);
+  if (!succes) return res.status(400).json( message);
+  return res.status(201).json(response);
 }

@@ -43,7 +43,6 @@
 .actionBtn {
   background-color: var(--actionGreen);
   border-color: var(--actionGreen);
-  padding: 0.5rem 1rem;
 }
 
 .actionBtn:hover {

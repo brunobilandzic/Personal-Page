@@ -11,6 +11,8 @@ import utils from "../../styles/utils.module.css";
 import FormError from "../layout/formError";
 import Modal from "../layout/modal";
 import Link from "next/link";
+import { useDispatch } from "react-redux";
+import { setError } from "../../redux/slices/errorSlice";
 
 const initialMessage = {
   title: {
@@ -42,6 +44,7 @@ export default function NewMessage() {
   const [showModal, setShowModal] = useState(false);
   const [newMessageTitle, setNewMessageTitle] = useState("");
   const [newMessageSlug, setNewMessageSlug] = useState("");
+  const dispatch = useDispatch();
 
   useEffect(() => {
     isSubmitDisabled();
@@ -90,7 +93,7 @@ export default function NewMessage() {
         setShowModal(true);
       }
     } catch (error) {
-      console.log(error);
+      dispatch(setError({ message: error.response.data }));
     }
   };
 
@@ -131,15 +134,17 @@ export default function NewMessage() {
           </>
         }
         showModal={showModal}
-        canCancel
-        onCancel={() => {
-          setShowModal(false);
-        }}
         footer={
           <>
             <Link href="/messages">
-              <Button className={styles.backModal}>All messages</Button>
+              <Button className={utils.actionBtn}>All messages</Button>
             </Link>
+            <Button
+              className={`ms-2 btn-danger`}
+              onClick={() => setShowModal(false)}
+            >
+              Close
+            </Button>
           </>
         }
       />
@@ -151,8 +156,7 @@ export default function NewMessage() {
           It will persist until the end of time.
           <br />
           Use the language of your choice.
-          <br />
-          I politely ask you to not use other people's names.
+          <br />I politely ask you to not use other people's names.
         </p>
       </div>
       <div className={styles.middleWrap}>
