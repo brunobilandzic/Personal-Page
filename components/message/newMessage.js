@@ -166,7 +166,7 @@ export default function NewMessage() {
       </div>
       <div className={styles.middleWrap}>
         <Link href="/messages">
-          <Button className={utils.actionBtn}>All messages</Button>
+          <Button className={utils.actionBtn}>All</Button>
         </Link>
       </div>
       <Form className="mb-5 pb-5" onSubmit={onSubmit}>
