@@ -46,32 +46,32 @@ export default function NewMessage() {
   const [newMessageSlug, setNewMessageSlug] = useState("");
   const dispatch = useDispatch();
 
-  const isSubmitDisabled = () => {
-    let isDisabled = false;
-    Object.entries(message).forEach((entry) => {
-      const [inputId, value] = entry;
-      Object.entries(value).forEach((entry) => {
-        const [key, value] = entry;
-        if (key === "validationMessage" && value !== null) {
-          setSubmitDisabled(true);
-          isDisabled = true;
-          return;
-        }
-        if (key === "isTouched" && !value && inputId != "username") {
-          setSubmitDisabled(true);
-          isDisabled = true;
-          return;
-        }
-      });
-    });
-    if (!isDisabled) {
-      setSubmitDisabled(false);
-    }
-  };
-
   useEffect(() => {
+    const isSubmitDisabled = () => {
+      let isDisabled = false;
+      Object.entries(message).forEach((entry) => {
+        const [inputId, value] = entry;
+        Object.entries(value).forEach((entry) => {
+          const [key, value] = entry;
+          if (key === "validationMessage" && value !== null) {
+            setSubmitDisabled(true);
+            isDisabled = true;
+            return;
+          }
+          if (key === "isTouched" && !value && inputId != "username") {
+            setSubmitDisabled(true);
+            isDisabled = true;
+            return;
+          }
+        });
+      });
+      if (!isDisabled) {
+        setSubmitDisabled(false);
+      }
+    };
+
     isSubmitDisabled();
-  }, [submitDisabled, message]);
+  }, [message]);
 
   const onInputClick = (e) => {
     setMessage({
@@ -120,8 +120,6 @@ export default function NewMessage() {
     }
   };
 
-  
-
   return (
     <div>
       <Modal
@@ -131,7 +129,12 @@ export default function NewMessage() {
             <p>Message "{newMessageTitle}" sent successfully!</p>
             <p>
               You can visit it at{" "}
-              <a className={utils.customLink} href={`/messages/${newMessageSlug}`}>this link</a>
+              <a
+                className={utils.customLink}
+                href={`/messages/${newMessageSlug}`}
+              >
+                this link
+              </a>
             </p>
           </>
         }
