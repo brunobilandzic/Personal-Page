@@ -14,6 +14,7 @@ export default function Home() {
           Here you can read my blog posts, see my education and write me a{" "}
           <a
             href="https://www.brunobilandzic.from.hr/messages/new"
+            rel="noreferrer"
             className={styles.customLink}
           >
             message
@@ -23,6 +24,7 @@ export default function Home() {
         <h4>Contact</h4>
         <a
           className={styles.customLink}
+          rel="noreferrer"
           href="mailto:bruno.bilandzic@outlook.com"
         >
           Mail
@@ -31,6 +33,7 @@ export default function Home() {
         <a
           className={styles.customLink}
           target="_blank"
+          rel="noreferrer"
           href="https://github.com/brunobilandzic"
         >
           Github
