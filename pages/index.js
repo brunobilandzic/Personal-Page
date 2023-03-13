@@ -42,6 +42,7 @@ export default function Home() {
         <a
           className={styles.customLink}
           target="_blank"
+          rel="noreferrer"
           href="https://www.facebook.com/bruno.bilandzic.14/"
         >
           Facebook
@@ -50,6 +51,7 @@ export default function Home() {
         <a
           className={styles.customLink}
           target="_blank"
+          rel="noreferrer"
           href="https://www.instagram.com/bruno.bilandzic/"
         >
           Instagram
