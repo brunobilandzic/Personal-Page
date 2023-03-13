@@ -25,8 +25,6 @@ export default function Home() {
         <h4>Contact</h4>
         <a
           className={styles.customLink}
-          target="_blank"
-          rel="noreferrer"
           href="mailto:bruno.bilandzic@outlook.com"
         >
           Mail
