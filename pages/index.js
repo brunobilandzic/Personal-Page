@@ -9,7 +9,7 @@ export default function Home() {
       <section>
         <h2 className="">Hello, I am Bruno.</h2>
         <p className="">
-          This is my personal page.
+          Welcome to my personal page.
           <br />
           Here you can read my blog posts, see my education and write me a{" "}
           <a
