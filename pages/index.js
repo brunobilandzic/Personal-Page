@@ -6,8 +6,6 @@ export default function Home() {
         <title>Bruno Bilandzic</title>
       </Head>
       <div className="main-container">
-        <h1>STOP EATING SENTIENT BEINGS!</h1>
-        <h3> </h3>
         <section>
           <h2>
             <a href="mailto:bruno.bilandzic@outlook.com">Mail</a>
